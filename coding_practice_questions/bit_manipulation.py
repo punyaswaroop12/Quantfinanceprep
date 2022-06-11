@@ -4,7 +4,7 @@
 
 
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums) -> int:
         # initialize the res to 0
         res = 0
 
@@ -22,7 +22,7 @@ class Solution:
 
 
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums) -> int:
         p1 = 0
         p2 = 0
         for i in nums:
@@ -50,7 +50,7 @@ class Solution:
 # Solution 1:
 # Boyer- Moore's voting algo
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
+    def majorityElement(self, nums) -> int:
         # Track the majority element
         me = nums[0]
 
@@ -79,7 +79,7 @@ class Solution:
 # Bit Manipulation
 # More explanation: https://www.geeksforgeeks.org/find-the-majority-element-set-3-bit-magic/
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
+    def majorityElement(self, nums) -> int:
         # Number of bits in the integer
         length = 32
         n = len(nums)
@@ -206,7 +206,7 @@ class Solution:
 
 # Brute force - create function to calculate the set bits and append it to a resultant array (O(Nlog(intmax))
 class Solution:
-    def countBits(self, n: int) -> List[int]:
+    def countBits(self, n: int):
         res = []
         for i in range(n + 1):
             res.append(self.countsetbits(i))
@@ -229,7 +229,7 @@ class Solution:
 # if integer is even: then that integer has same bits as integer//2
 # if it is odd, then that integer has 1+ bits in the integer//2
 class Solution:
-    def countBits(self, n: int) -> List[int]:
+    def countBits(self, n: int):
         res = [0] * (n + 1)
         for i in range(n + 1):
             if i == 0:
@@ -283,20 +283,20 @@ class Solution:
 # example: encoded=[6,5,4,6], answer =[2,4,1,5,3]
 # firstly we will have the decoded array as a permutation of [1,2,3,4,5](length =len(encoded)+1)
 # we need to find the first element of the decoded array so that we can complete the array.
-# to find the first element we can just xor of all the elements in the encoded and that would be equal to the xor of all the elements in the 
-# decoded array. if i xor of all the elements in the decoded array and xor the odd indexed elements in the encided array would 
+# to find the first element we can just xor of all the elements in the encoded and that would be equal to the xor of all the elements in the
+# decoded array. if i xor of all the elements in the decoded array and xor the odd indexed elements in the encided array would
 # give the first element as total(1^2^3^4^5)^firstIndex(2^3)^thirdindex(4^5)
 # inverse of xor is the xor
 class Solution:
-    def decode(self, encoded: List[int]) -> List[int]:
-        n = len(encoded)+1
-        total =0
-        for i in range(1,n+1):
-            total =total^i
-        for i in range(1,n,2):
-            total=total^encoded[i]
-        decoded=[total]
+    def decode(self, encoded):
+        n = len(encoded) + 1
+        total = 0
+        for i in range(1, n + 1):
+            total = total ^ i
+        for i in range(1, n, 2):
+            total = total ^ encoded[i]
+        decoded = [total]
         for i in encoded:
-            decoded.append(decoded[-1]^i)
-        return decoded    
-            
+            decoded.append(decoded[-1] ^ i)
+        return decoded
+

@@ -4,7 +4,7 @@
 
 # Solution 1: Recursive (O(log(n)))
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums, target: int) -> int:
         l = 0
         r = len(nums) - 1
         return self.binarysearch(l, r, target, nums)
@@ -24,7 +24,7 @@ class Solution:
 
 # Solution 2: Iterative O(log(n))
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums, target: int) -> int:
         l = 0
         r = len(nums) - 1
         while l <= r:

@@ -1,35 +1,41 @@
-# Implement Stack using Queues
+# Design HashMap
 #########################################################
 
-# Implement Queue using Stacks
+# Valid Sudoku
 #########################################################
 
-# Valid Parentheses
+# Group Anagrams
 #########################################################
 
-# Next Greater Element I
+# Maximal Rectangle
 #########################################################
 
-# Design stack which supports getmin in O(1) time and space (Read editorial)
+# Top K Frequent Elements
 #########################################################
 
-# Largest Rectangle in Histogram
+# Insert Delete GetRandom O(1)
 #########################################################
 
-# LRU Cache
+# First Unique Character in a String
 #########################################################
 
-# Rotting Oranges
+# Find All Anagrams in a String
 #########################################################
 
-# Reverse a stack without using extra space
+# Sort Characters By Frequency
 #########################################################
 
-# Basic Calculator
+# Contiguous Array
 #########################################################
 
-# Basic Calculator II
+# Subarray Sum Equals K
 #########################################################
 
-# Car Fleet
+# Longest Duplicate Substring
+#########################################################
+
+# Longest Substring Without Repeating Characters
+#########################################################
+
+# Implement chaining
 #########################################################

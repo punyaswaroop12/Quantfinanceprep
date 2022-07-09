@@ -90,36 +90,20 @@ def insertion_sort(arr):
 
 # Counting sort
 #############################################################################
-
-
 def counting_sort(arr):
-    # initialize count array
-    count = [0] * 10
-
-    # initialize resultant array
-    res = [0] * len(arr)
-
-    # get the count array updated
-    for i in range(len(arr)):
-        count[arr[i]] += 1
-
-    # get the cumulative sum
-    for j in range(1, len(count)):
-        count[j] = count[j] + count[j - 1]
-
-    # get the sorted array
-    counter = len(arr) - 1
-    while counter >= 0:
-        res[count[arr[counter]] - 1] = arr[counter]
-        count[arr[counter]] -= 1
-        counter -= 1
-    return res
-
+    count=[0]*10
+    for i in arr:
+        count[i]+=1
+    for i in range(1,len(count)):
+        count[i]+=count[i-1]
+    res=[0]*len(arr)
+    for i in range(len(arr)-1, -1,-1):
+        res[count[arr[i]]-1]=arr[i]
+        count[arr[i]] =count[arr[i]]-1
+    return res     
 
 # Merge sort - 0(nlogn) - Divide and Conquer
 #############################################################################
-
-
 def mergeSort(arr):
     if len(arr) > 1:
         mid = int(len(arr) / 2)
@@ -173,8 +157,6 @@ def quick_sort(array, low, high):
 
 # radix sort
 #############################################################################
-
-
 def countingSort(arr, exp1):
     n = len(arr)
     # The output array elements that will have sorted arr
@@ -217,8 +199,6 @@ def radixSort(arr):
 
 # bucket sort
 #############################################################################
-
-
 def insertionSort(b):
     for i in range(1, len(b)):
         up = b[i]
@@ -254,5 +234,9 @@ def bucketSort(x):
             k += 1
     return x
 
+
 # Maximum Gap
 #########################################################
+
+
+####bro code youtubre channel

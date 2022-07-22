@@ -91,16 +91,17 @@ def insertion_sort(arr):
 # Counting sort
 #############################################################################
 def counting_sort(arr):
-    count=[0]*10
+    count = [0] * 10
     for i in arr:
-        count[i]+=1
-    for i in range(1,len(count)):
-        count[i]+=count[i-1]
-    res=[0]*len(arr)
-    for i in range(len(arr)-1, -1,-1):
-        res[count[arr[i]]-1]=arr[i]
-        count[arr[i]] =count[arr[i]]-1
-    return res     
+        count[i] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    res = [0] * len(arr)
+    for i in range(len(arr) - 1, -1, -1):
+        res[count[arr[i]] - 1] = arr[i]
+        count[arr[i]] = count[arr[i]] - 1
+    return res
+
 
 # Merge sort - 0(nlogn) - Divide and Conquer
 #############################################################################
@@ -237,6 +238,31 @@ def bucketSort(x):
 
 # Maximum Gap
 #########################################################
+# https://leetcode.com/problems/maximum-gap/submissions/
+# solution : O(N) pigeon hole principle
+class Solution:
+    def maximumGap(self, nums: List[int]) -> int:
+        maximum = max(nums)
+        minimum = min(nums)
+        length = len(nums)
+        if len(nums) < 2 or maximum == minimum:
+            return 0
+        step = math.ceil((maximum - minimum) / length)
+        buckets = [[] for _ in range((maximum - minimum) // step + 1)]
+        for i in nums:
+            index = (i - minimum) // step
+            if len(buckets[index]) == 0:
+                buckets[index] = [i, i]
+            else:
+                a, b = buckets[index]
+                buckets[index] = [min(a, i), max(b, i)]
+        buckets = [b for b in buckets if len(b) != 0]
+        maxgap = -math.inf
+        for i in range(1, len(buckets)):
+            curr_gap = buckets[i][0] - buckets[i - 1][1]
+            if curr_gap > maxgap:
+                maxgap = curr_gap
+        return maxgap
 
 
 ####bro code youtubre channel
